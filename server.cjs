@@ -17,7 +17,7 @@ db = getDb()
 console.log('Listening on port 8000')
     }
 })
-app.post('/add-entry', function(request,response){
+app.post('/sign-in', function(request,response){
     db.collection('ExpensesData').insertOne(request.body).then(function() {
         response.status(201).json({
             "status" : "Entry added successfully"
@@ -44,7 +44,7 @@ app.get('/get-entries',function(request,response){
         })
     })
 })
-app.get('/get-entries-1', function(request,response){
+app.get('/login', function(request,response){
     const entries = []
     db.collection('ExpensesData')
     .find()
